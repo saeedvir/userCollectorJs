@@ -66,7 +66,7 @@ Make sure your HTML includes a CSRF token meta tag:
 Place this script at the end of your `<body>` or load it asynchronously:
 
 ```html
-<script src="user-analytics.js"></script>
+<script src="user-collector.js"></script>
 ```
 
 Or inline:
@@ -121,8 +121,8 @@ MIT — Feel free to use, modify, and distribute.
 
 Open an issue or submit a PR on GitHub. Contributions welcome!
 
-> ✉️ Maintainer: [Your Name]  
-> 🌐 GitHub: `https://github.com/your-username/user-analytics`
+> ✉️ Maintainer: [Saeedvir]  
+> 🌐 GitHub: `https://github.com/saeedvir/userCollectorJs/`
 
 ---
 
