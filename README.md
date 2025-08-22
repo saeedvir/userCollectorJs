@@ -93,6 +93,27 @@ app.post('/api/user-analytics', (req, res) => {
 
 ---
 
+✅ Backend Endpoint for PHP
+Create a file called api/user-analytics.php (or integrate into your existing routing system) to handle the incoming POST request.
+
+📁 File: api/user-analytics.php
+
+✅ Test the Endpoint
+You can test manually with curl:
+```bash
+curl -X POST \
+  http://yoursite.com/api/user-analytics.php \
+  -H "Content-Type: application/json" \
+  -H "X-CSRF-TOKEN: abc123" \
+  -d '{
+    "os": {"name": "Linux"},
+    "browser": {"name": "Firefox"},
+    "screen": {"width": 1920, "height": 1080},
+    "url": "https://yoursite.com",
+    "timestamp": "2025-04-05T10:00:00Z"
+  }'
+```
+
 ## 🔄 Fallback Mechanism
 
 If `fetch()` fails (e.g., blocked by ad blocker or CORS), it falls back to:
