@@ -39,7 +39,7 @@ function collectAndSendUserAnalytics() {
         outerHeight: window.outerHeight,
     };
 
-    if (localStorage.getItem('information-collected') !== 'yess') {
+    if (localStorage.getItem('information-collected') !== 'yes') {
         fetch('/api/user-analytics', {
             method: 'POST',
             headers: {
