@@ -37,9 +37,10 @@ function collectAndSendUserAnalytics() {
         innerHeight: window.innerHeight,
         outerWidth: window.outerWidth,
         outerHeight: window.outerHeight,
+        isOldCssSupport: isOldCssSupport()
     };
 
-    if (localStorage.getItem('information-collected') !== 'yes') {
+    if (localStorage.getItem('information-collected') !== 'yess') {
         fetch('/api/user-analytics', {
             method: 'POST',
             headers: {
@@ -103,5 +104,24 @@ function isTouchable() {
     );
 }
 
+function isOldCssSupport() {
+
+    // Detect CSS support (modern features)
+    if (window.CSS && typeof CSS.supports === "function") {
+        // Test for some modern CSS features
+        if (
+            !CSS.supports("display", "grid") ||      // CSS Grid
+            !CSS.supports("color", "var(--test)") || // CSS variables
+            !CSS.supports("transform", "translate3d(0,0,0)") // 3D transforms
+        ) {
+            return true;
+        }
+    } else {
+        // Browser does not support CSS.supports at all (very old)
+        return true;
+    }
+
+    return false;
+}
 
 document.addEventListener('DOMContentLoaded', collectAndSendUserAnalytics, { once: true });
